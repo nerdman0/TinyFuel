@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "tinyfuel:tiny_charcoal"
+    },
+    {
+      "item": "tinyfuel:tiny_charcoal"
+    },
+    {
+      "item": "tinyfuel:tiny_charcoal"
+    },
+    {
+      "item": "tinyfuel:tiny_charcoal"
+    },
+    {
+      "item": "tinyfuel:tiny_charcoal"
+    },
+    {
+      "item": "tinyfuel:tiny_charcoal"
+    },
+    {
+      "item": "tinyfuel:tiny_charcoal"
+    },
+    {
+      "item": "tinyfuel:tiny_charcoal"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:charcoal"
+  }
+}
