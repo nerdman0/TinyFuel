@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "tag": "tinyfuel:tiny_fuels"
+    }
+  ],
+  "processing_time": 100,
+  "results": [
+    {
+      "count": 10,
+      "id": "tinyfuel:mini_fuel"
+    }
+  ]
+}

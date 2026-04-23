@@ -71,6 +71,9 @@ public class TinyFuel {
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ItemRegister.Tiny_Coal);
             event.accept(ItemRegister.Tiny_Charcoal);
+            event.accept(ItemRegister.Mini_Fuel);
+            event.accept(ItemRegister.Micro_Fuel);
+            event.accept(ItemRegister.Nano_Fuel);
         }
     }
 

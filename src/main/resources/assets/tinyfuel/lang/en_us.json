@@ -1,5 +1,8 @@
 {
   "itemGroup.tinyfuel": "Tiny Fuels",
   "item.tinyfuel.tiny_coal": "Tiny Coal",
-  "item.tinyfuel.tiny_charcoal": "Tiny Charcoal"
+  "item.tinyfuel.tiny_charcoal": "Tiny Charcoal",
+  "item.tinyfuel.mini_fuel": "Mini Fuel",
+  "item.tinyfuel.micro_fuel": "Micro Fuel",
+  "item.tinyfuel.nano_fuel": "Nano Fuel"
 }
