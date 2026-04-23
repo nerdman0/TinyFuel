@@ -1,0 +1,32 @@
+{
+  "parent": "tinyfuel:micro_fuel",
+  "display": {
+    "description": {
+      "translate": "advancements.tinyfuel.nano_fuel.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "tinyfuel:nano_fuel"
+    },
+    "title": {
+      "translate": "advancements.tinyfuel.nano_fuel.title"
+    }
+  },
+  "criteria": {
+    "nano_fuel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tinyfuel:nano_fuel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "nano_fuel"
+    ]
+  ]
+}

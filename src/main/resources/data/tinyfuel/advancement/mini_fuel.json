@@ -1,0 +1,32 @@
+{
+  "parent": "tinyfuel:tiny_fuel",
+  "display": {
+    "description": {
+      "translate": "advancements.tinyfuel.mini_fuel.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "tinyfuel:mini_fuel"
+    },
+    "title": {
+      "translate": "advancements.tinyfuel.mini_fuel.title"
+    }
+  },
+  "criteria": {
+    "mini_fuel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "tinyfuel:mini_fuel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "mini_fuel"
+    ]
+  ]
+}

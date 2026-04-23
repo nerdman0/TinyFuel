@@ -4,5 +4,13 @@
   "item.tinyfuel.tiny_charcoal": "Tiny Charcoal",
   "item.tinyfuel.mini_fuel": "Mini Fuel",
   "item.tinyfuel.micro_fuel": "Micro Fuel",
-  "item.tinyfuel.nano_fuel": "Nano Fuel"
+  "item.tinyfuel.nano_fuel": "Nano Fuel",
+  "advancements.tinyfuel.tiny_fuel.title": "Fuel Efficiency",
+  "advancements.tinyfuel.tiny_fuel.description": "A smaller than normal fuel, allowing more precise burning. (This advancement also acts to let others know tiny fuels is installed).",
+  "advancements.tinyfuel.mini_fuel.title": "Time To Get Smaller",
+  "advancements.tinyfuel.mini_fuel.description": "I know you wanted more precision in your burning, but isn't this a step too far?",
+  "advancements.tinyfuel.micro_fuel.title": "Why Though?",
+  "advancements.tinyfuel.micro_fuel.description": "I get exact control is your thing, but wouldn't you agree that this is getting ridiculous?",
+  "advancements.tinyfuel.nano_fuel.title": "Splitting The Atom",
+  "advancements.tinyfuel.nano_fuel.description": "You were so preoccupied with whether or not you could, you didn't stop to think if you should...\n\n200 of these and for what, a single iron?"
 }
