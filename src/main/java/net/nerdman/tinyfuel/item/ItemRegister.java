@@ -11,15 +11,15 @@ import net.nerdman.tinyfuel.item.fuel.FuelItem;
 public class ItemRegister {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(TinyFuel.MODID);
 
-    public static final DeferredItem<Item> Tiny_Coal = ITEMS.register("tiny_coal",
+    public static final DeferredItem<Item> TINY_COAL = ITEMS.register("tiny_coal",
             () -> new FuelItem(new Item.Properties(), 200));
-    public static final DeferredItem<Item> Tiny_Charcoal = ITEMS.register("tiny_charcoal",
+    public static final DeferredItem<Item> TINY_CHARCOAL = ITEMS.register("tiny_charcoal",
             () -> new FuelItem(new Item.Properties(), 200));
-    public static final DeferredItem<Item> Mini_Fuel = ITEMS.register("mini_fuel",
+    public static final DeferredItem<Item> MINI_FUEL = ITEMS.register("mini_fuel",
             () -> new FuelItem(new Item.Properties(), 20));
-    public static final DeferredItem<Item> Micro_Fuel = ITEMS.register("micro_fuel",
+    public static final DeferredItem<Item> MICRO_FUEL = ITEMS.register("micro_fuel",
             () -> new FuelItem(new Item.Properties(), 2));
-    public static final DeferredItem<Item> Nano_Fuel = ITEMS.register("nano_fuel",
+    public static final DeferredItem<Item> NANO_FUEL = ITEMS.register("nano_fuel",
             () -> new FuelItem(new Item.Properties(), 1));
 
     public static void register(IEventBus eventBus){
