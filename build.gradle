@@ -81,6 +81,11 @@ neoForge {
             // Please read: https://stackoverflow.com/questions/2031163/when-to-use-the-different-log-levels
             logLevel = org.slf4j.event.Level.DEBUG
         }
+
+        clientAuth { //oh my god wait i get it now, clientauth is the name of the thing being executed (that shows up as "runClientAuth")
+            client() //then this tells it to launch a client instance of minecraft
+            devLogin = true //and this is telling it to turn on the login for my microsoft account i seee noowwwwwww
+        } //if i do server() would that cause it to run both the client and server at the same time? I tested, no.
     }
 
     mods {
