@@ -1,0 +1,33 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "extraconditionals:config_value",
+      "modid": "tinyfuel",
+      "filePath": "tinyfuel-common.toml",
+      "conVal": "torchRecipe"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    ".": {
+      "tag": "minecraft:soul_fire_base_blocks"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "C": [
+      {
+        "tag": "tinyfuel:tiny_fuels"
+      }
+    ]
+  },
+  "pattern": [
+    "C",
+    "S",
+    "."
+  ],
+  "result": {
+    "id": "minecraft:soul_torch"
+  }
+}

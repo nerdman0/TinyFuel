@@ -1,0 +1,40 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "extraconditionals:config_value",
+      "modid": "tinyfuel",
+      "filePath": "tinyfuel-common.toml",
+      "conVal": "dungeonLoot"
+    }
+  ],
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 8.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "tinyfuel:tiny_coal",
+          "weight": 20
+        }
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 2.0,
+        "min": 0.0
+      }
+    }
+  ],
+  "random_sequence": "minecraft:chests/underwater_ruin_big"
+}

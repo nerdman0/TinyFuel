@@ -18,18 +18,9 @@ import java.util.stream.Collectors;
 public class Config {
     private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
-//    public static final ModConfigSpec.IntValue MAGIC_NUMBER = BUILDER
-//            .comment("A magic number")
-//            .defineInRange("magicNumber", 42, 0, Integer.MAX_VALUE);
-//
-//    public static final ModConfigSpec.ConfigValue<String> MAGIC_NUMBER_INTRODUCTION = BUILDER
-//            .comment("What you want the introduction message to be for the magic number")
-//            .define("magicNumberIntroduction", "The magic number is... ");
+    public static final ModConfigSpec.BooleanValue TORCH_RECIPE = BUILDER.comment("Enable crafting torches with tiny fuel").define("torchRecipe", false);
+    public static final ModConfigSpec.BooleanValue WITHER_SKELETON_LOOT = BUILDER.comment("Enable wither skeleton dropping tiny coal").define("weletonLoot", false);
+    public static final ModConfigSpec.BooleanValue DUNGEON_LOOT = BUILDER.comment("Enable tiny coal appearing in loot chests").define("dungeonLoot", true);
 
     static final ModConfigSpec SPEC = BUILDER.build();
-
-    @SubscribeEvent
-    static void onLoad(final ModConfigEvent event) {
-
-    }
 }

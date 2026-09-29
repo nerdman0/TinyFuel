@@ -37,7 +37,7 @@ public class TinyFuel {
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
-    // Add the example block item to the building blocks tab
+        // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ItemRegister.TINY_COAL);

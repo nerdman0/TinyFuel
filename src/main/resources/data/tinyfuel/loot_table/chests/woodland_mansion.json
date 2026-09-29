@@ -1,0 +1,40 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "extraconditionals:config_value",
+      "modid": "tinyfuel",
+      "filePath": "tinyfuel-common.toml",
+      "conVal": "dungeonLoot"
+    }
+  ],
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 16.0,
+                "min": 2.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "tinyfuel:tiny_coal",
+          "weight": 30
+        }
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 1.0,
+        "min": -1.0
+      }
+    }
+  ],
+  "random_sequence": "minecraft:chests/woodland_mansion"
+}

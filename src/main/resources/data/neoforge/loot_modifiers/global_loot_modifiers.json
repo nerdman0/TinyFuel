@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "entries": [
+    "tinyfuel:wither_skeleton",
+    "tinyfuel:simple_dungeon",
+    "tinyfuel:abandoned_mineshaft",
+    "tinyfuel:ancient_city",
+    "tinyfuel:igloo_chest",
+    "tinyfuel:shipwreck_supply",
+    "tinyfuel:stronghold_crossing",
+    "tinyfuel:underwater_ruin_small",
+    "tinyfuel:underwater_ruin_big",
+    "tinyfuel:village/village_toolsmith",
+    "tinyfuel:village/village_fisher",
+    "tinyfuel:village/village_butcher",
+    "tinyfuel:village/village_snowy_house",
+    "tinyfuel:woodland_mansion"
+  ]
+}
