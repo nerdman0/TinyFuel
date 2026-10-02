@@ -6,6 +6,7 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
@@ -45,6 +46,9 @@ public class TinyFuel {
             event.accept(ItemRegister.MINI_FUEL);
             event.accept(ItemRegister.MICRO_FUEL);
             event.accept(ItemRegister.NANO_FUEL);
+            if(ModList.get().isLoaded("silentgear")) {
+                event.accept(ItemRegister.TINY_NETHERWOOD_CHARCOAL);
+            }
         }
     }
 }
