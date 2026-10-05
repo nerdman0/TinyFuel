@@ -1,9 +1,7 @@
 package net.nerdman.tinyfuel.block;
 
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
@@ -11,6 +9,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.nerdman.tinyfuel.TinyFuel;
+import net.nerdman.tinyfuel.block.fuel.FuelBlockItem;
 import net.nerdman.tinyfuel.item.ItemRegister;
 
 import java.util.function.Supplier;
@@ -33,7 +32,7 @@ public class BlockRegister {
     }
 
     private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block){
-        ItemRegister.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+        ItemRegister.ITEMS.register(name, () -> new FuelBlockItem(block.get(), new Item.Properties(), 16000));
     }
 
     public static void register(IEventBus eventBus){
