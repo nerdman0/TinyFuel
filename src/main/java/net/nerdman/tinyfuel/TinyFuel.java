@@ -2,7 +2,9 @@ package net.nerdman.tinyfuel;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.Items;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -44,13 +46,16 @@ public class TinyFuel {
 
         // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
+            event.insertAfter(Items.COAL_BLOCK.getDefaultInstance(), BlockRegister.CHARCOAL_BLOCK.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+        }
+
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(BlockRegister.CHARCOAL_BLOCK);
-            event.accept(ItemRegister.TINY_COAL);
-            event.accept(ItemRegister.TINY_CHARCOAL);
-            event.accept(ItemRegister.MINI_FUEL);
-            event.accept(ItemRegister.MICRO_FUEL);
-            event.accept(ItemRegister.NANO_FUEL);
+            event.insertAfter(Items.CHARCOAL.getDefaultInstance(), ItemRegister.NANO_FUEL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(Items.CHARCOAL.getDefaultInstance(), ItemRegister.MICRO_FUEL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(Items.CHARCOAL.getDefaultInstance(), ItemRegister.MINI_FUEL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(Items.CHARCOAL.getDefaultInstance(), ItemRegister.TINY_CHARCOAL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(Items.CHARCOAL.getDefaultInstance(), ItemRegister.TINY_COAL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             if(ModList.get().isLoaded("silentgear")) {
                 event.accept(ItemRegister.TINY_NETHERWOOD_CHARCOAL);
             }
