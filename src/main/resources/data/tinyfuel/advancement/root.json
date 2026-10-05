@@ -1,0 +1,37 @@
+{
+  "display": {
+    "description": {
+      "translate": "advancements.tinyfuel.root.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "tinyfuel:tiny_coal"
+    },
+    "title": {
+      "translate": "advancements.tinyfuel.root.title"
+    },
+    "show_toast": false,
+    "announce_to_chat": false,
+    "background": "tinyfuel:textures/gui/advancements/backgrounds/layeredfuels.png"
+  },
+  "criteria": {
+    "tiny_fuel": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:coal",
+              "minecraft:charcoal"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "tiny_fuel"
+    ]
+  ]
+}

@@ -1,16 +1,16 @@
 {
+  "parent": "tinyfuel:root",
   "display": {
     "description": {
       "translate": "advancements.tinyfuel.tiny_fuel.description"
     },
     "icon": {
       "count": 1,
-      "id": "tinyfuel:tiny_coal"
+      "id": "tinyfuel:tiny_charcoal"
     },
     "title": {
       "translate": "advancements.tinyfuel.tiny_fuel.title"
-    },
-    "background": "tinyfuel:textures/gui/advancements/backgrounds/layeredfuels.png"
+    }
   },
   "criteria": {
     "tiny_fuel": {
