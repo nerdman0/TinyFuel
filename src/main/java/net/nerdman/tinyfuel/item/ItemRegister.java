@@ -23,6 +23,8 @@ public class ItemRegister {
             () -> new FuelItem(new Item.Properties(), 1));
     public static final DeferredItem<Item> TINY_NETHERWOOD_CHARCOAL = ITEMS.register("tiny_netherwood_charcoal",
             () -> new FuelItem(new Item.Properties(), 200));
+    public static final DeferredItem<Item> TINY_COAL_COKE_IE = ITEMS.register("tiny_coal_coke_ie",
+            () -> new FuelItem(new Item.Properties(), 200));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

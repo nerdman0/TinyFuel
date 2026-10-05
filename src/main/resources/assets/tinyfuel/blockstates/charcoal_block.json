@@ -1,0 +1,7 @@
+{
+  "variants":{
+    "": {
+      "model": "tinyfuel:block/charcoal_block"
+    }
+  }
+}

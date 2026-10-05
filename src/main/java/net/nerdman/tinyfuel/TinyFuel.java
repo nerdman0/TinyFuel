@@ -14,6 +14,7 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import net.nerdman.tinyfuel.block.BlockRegister;
 import net.nerdman.tinyfuel.item.ItemRegister;
 import org.slf4j.Logger;
 
@@ -34,6 +35,9 @@ public class TinyFuel {
         // Register the items from itemregister
         ItemRegister.register(modEventBus);
 
+        // Register the blocks from blockregister
+        BlockRegister.register(modEventBus);
+
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
@@ -41,6 +45,7 @@ public class TinyFuel {
         // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(BlockRegister.CHARCOAL_BLOCK);
             event.accept(ItemRegister.TINY_COAL);
             event.accept(ItemRegister.TINY_CHARCOAL);
             event.accept(ItemRegister.MINI_FUEL);
@@ -48,6 +53,9 @@ public class TinyFuel {
             event.accept(ItemRegister.NANO_FUEL);
             if(ModList.get().isLoaded("silentgear")) {
                 event.accept(ItemRegister.TINY_NETHERWOOD_CHARCOAL);
+            }
+            if(ModList.get().isLoaded("immersiveengineering")){
+                event.accept(ItemRegister.TINY_COAL_COKE_IE);
             }
         }
     }

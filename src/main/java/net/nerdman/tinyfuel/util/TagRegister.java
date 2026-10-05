@@ -9,9 +9,14 @@ import net.nerdman.tinyfuel.TinyFuel;
 public class TagRegister {
     public static class Items {
         public static final TagKey<Item> TINY_FUELS = createTag("tiny_fuels");
+        //public static final TagKey<Item> CHARCOAL_BLOCKS = createTagC("charcoal");
 
         private static TagKey<Item> createTag(String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(TinyFuel.MODID, name));
         }
+
+        //private static TagKey<Item> createTagC(String name) {
+        //    return ItemTags.create(ResourceLocation.fromNamespaceAndPath(C.MODID, name));
+        //}
     }
 }
