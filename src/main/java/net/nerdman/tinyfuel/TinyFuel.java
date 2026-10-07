@@ -1,21 +1,21 @@
 package net.nerdman.tinyfuel;
 
 import com.mojang.logging.LogUtils;
-import net.minecraft.client.Minecraft;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.packs.PackType;
+import net.minecraft.server.packs.repository.Pack;
+import net.minecraft.server.packs.repository.PackSource;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Items;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
-import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
-import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.AddPackFindersEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
-import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.nerdman.tinyfuel.block.BlockRegister;
 import net.nerdman.tinyfuel.item.ItemRegister;
 import org.slf4j.Logger;
@@ -33,6 +33,9 @@ public class TinyFuel {
     public TinyFuel(IEventBus modEventBus, ModContainer modContainer) {
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
+
+        // Register resource packs man
+        modEventBus.addListener(this::registerResourcePack);
 
         // Register the items from itemregister
         ItemRegister.register(modEventBus);
@@ -63,5 +66,16 @@ public class TinyFuel {
                 event.accept(ItemRegister.TINY_COAL_COKE_IE);
             }
         }
+    }
+
+    private void registerResourcePack(final AddPackFindersEvent event) {
+        event.addPackFinders(
+                ResourceLocation.fromNamespaceAndPath(MODID, "resourcepacks/tfpa"),
+                PackType.CLIENT_RESOURCES,
+                Component.literal("Tiny Fuel Programmer Art"),
+                PackSource.BUILT_IN,
+                false,
+                Pack.Position.TOP
+        );
     }
 }
