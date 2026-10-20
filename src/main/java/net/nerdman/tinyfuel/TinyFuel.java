@@ -1,64 +1,56 @@
 package net.nerdman.tinyfuel;
 
 import com.mojang.logging.LogUtils;
-import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.packs.PackType;
-import net.minecraft.server.packs.repository.Pack;
-import net.minecraft.server.packs.repository.PackSource;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Items;
-import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.ModContainer;
-import net.neoforged.fml.ModList;
-import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.config.ModConfig;
-import net.neoforged.neoforge.event.AddPackFindersEvent;
-import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.ModList;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.nerdman.tinyfuel.block.BlockRegister;
 import net.nerdman.tinyfuel.item.ItemRegister;
 import org.slf4j.Logger;
 
-// The value here should match an entry in the META-INF/neoforge.mods.toml file
+// The value here should match an entry in the META-INF/mods.toml file
 @Mod(TinyFuel.MODID)
-public class TinyFuel {
+public class TinyFuel
+{
     // Define mod id in a common place for everything to reference
     public static final String MODID = "tinyfuel";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    // The constructor for the mod class is the first code that is run when your mod is loaded.
-    // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
-    public TinyFuel(IEventBus modEventBus, ModContainer modContainer) {
-        // Register the item to a creative tab
-        modEventBus.addListener(this::addCreative);
+    public TinyFuel(FMLJavaModLoadingContext context)
+    {
+        IEventBus modEventBus = context.getModEventBus();
 
-        // Register resource packs man
-        modEventBus.addListener(this::registerResourcePack);
-
-        // Register the items from itemregister
         ItemRegister.register(modEventBus);
 
-        // Register the blocks from blockregister
         BlockRegister.register(modEventBus);
 
-        // Register our mod's ModConfigSpec so that FML can create and load the config file for us
-        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        // Register ourselves for server and other game events we are interested in
+        MinecraftForge.EVENT_BUS.register(this);
+        modEventBus.addListener(this::addCreative);
+
+        // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
+        context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
-        // Add the example block item to the building blocks tab
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
-            event.insertAfter(Items.COAL_BLOCK.getDefaultInstance(), BlockRegister.CHARCOAL_BLOCK.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+    private void addCreative(BuildCreativeModeTabContentsEvent event){
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
+            event.getEntries().putAfter(Items.COAL_BLOCK.getDefaultInstance(), BlockRegister.CHARCOAL_BLOCK.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
 
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.insertAfter(Items.CHARCOAL.getDefaultInstance(), ItemRegister.NANO_FUEL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            event.insertAfter(Items.CHARCOAL.getDefaultInstance(), ItemRegister.MICRO_FUEL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            event.insertAfter(Items.CHARCOAL.getDefaultInstance(), ItemRegister.MINI_FUEL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            event.insertAfter(Items.CHARCOAL.getDefaultInstance(), ItemRegister.TINY_CHARCOAL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            event.insertAfter(Items.CHARCOAL.getDefaultInstance(), ItemRegister.TINY_COAL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.getEntries().putAfter(Items.CHARCOAL.getDefaultInstance(), ItemRegister.NANO_FUEL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.getEntries().putAfter(Items.CHARCOAL.getDefaultInstance(), ItemRegister.MICRO_FUEL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.getEntries().putAfter(Items.CHARCOAL.getDefaultInstance(), ItemRegister.MINI_FUEL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.getEntries().putAfter(Items.CHARCOAL.getDefaultInstance(), ItemRegister.TINY_CHARCOAL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.getEntries().putAfter(Items.CHARCOAL.getDefaultInstance(), ItemRegister.TINY_COAL.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             if(ModList.get().isLoaded("silentgear")) {
                 event.accept(ItemRegister.TINY_NETHERWOOD_CHARCOAL);
             }
@@ -66,16 +58,5 @@ public class TinyFuel {
                 event.accept(ItemRegister.TINY_COAL_COKE_IE);
             }
         }
-    }
-
-    private void registerResourcePack(final AddPackFindersEvent event) {
-        event.addPackFinders(
-                ResourceLocation.fromNamespaceAndPath(MODID, "resourcepacks/tfpa"),
-                PackType.CLIENT_RESOURCES,
-                Component.literal("Tiny Fuel Programmer Art"),
-                PackSource.BUILT_IN,
-                false,
-                Pack.Position.TOP
-        );
     }
 }

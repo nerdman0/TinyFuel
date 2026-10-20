@@ -1,0 +1,18 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "immersiveengineering"
+    }
+  ],
+  "type": "immersiveengineering:coke_oven",
+  "creosote": 75,
+  "input": {
+    "tag": "minecraft:planks"
+  },
+  "result": {
+    "item": "tinyfuel:tiny_charcoal",
+    "count": 2
+  },
+  "time": 300
+}

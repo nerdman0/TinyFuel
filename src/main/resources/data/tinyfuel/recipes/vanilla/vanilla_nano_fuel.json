@@ -1,0 +1,26 @@
+{
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:or",
+        "values": [
+          {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+          },
+          {
+            "type": "forge:mod_loaded",
+            "modid": "immersiveengineering"
+          }
+        ]
+      }
+    }
+  ],
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "tinyfuel:micro_fuel"
+  },
+  "result": "tinyfuel:nano_fuel"
+}

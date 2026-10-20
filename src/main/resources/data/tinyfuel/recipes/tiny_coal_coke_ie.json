@@ -1,0 +1,19 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "immersiveengineering"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "immersiveengineering:coal_coke"
+    }
+  ],
+  "result": {
+    "item": "tinyfuel:tiny_coal_coke_ie",
+    "count": 16
+  }
+}

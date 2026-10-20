@@ -1,0 +1,18 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "immersiveengineering"
+    }
+  ],
+  "type": "immersiveengineering:sawmill",
+  "energy": 1000,
+  "input": {
+    "item": "tinyfuel:micro_fuel"
+  },
+  "result": {
+    "count": 2,
+    "item": "tinyfuel:nano_fuel"
+  },
+  "secondaries": []
+}

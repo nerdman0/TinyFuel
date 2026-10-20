@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:or",
+        "values": [
+          {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+          },
+          {
+            "type": "forge:mod_loaded",
+            "modid": "immersiveengineering"
+          }
+        ]
+      }
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "tinyfuel:tiny_fuels"
+    }
+  ],
+  "result": {
+    "item": "tinyfuel:mini_fuel",
+    "count": 10
+  }
+}

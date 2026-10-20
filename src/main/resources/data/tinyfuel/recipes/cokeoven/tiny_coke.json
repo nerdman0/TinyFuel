@@ -1,0 +1,18 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "immersiveengineering"
+    }
+  ],
+  "type": "immersiveengineering:coke_oven",
+  "creosote": 75,
+  "input": {
+    "item": "tinyfuel:tiny_coal"
+  },
+  "result": {
+    "item": "tinyfuel:tiny_coal_coke_ie",
+    "count": 2
+  },
+  "time": 600
+}
